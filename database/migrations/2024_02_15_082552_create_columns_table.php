@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('columns', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->unsignedBigInteger('board_id');
             $table->timestamps();
+
+            /**
+             * foreign keys
+             */
+            $table->foreign('board_id')->references('id')->on('boards')->restrictOnDelete();
         });
     }
 

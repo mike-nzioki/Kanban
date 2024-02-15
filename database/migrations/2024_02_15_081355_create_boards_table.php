@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('boards', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->foreignId('user_id');
             $table->timestamps();
+
+            /**
+             * foreign keys
+             */
+            $table->foreign('user_id')->references('id')->on('users')->restrictOnDelete();
         });
     }
 

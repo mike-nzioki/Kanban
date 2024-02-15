@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
+            $table->string('content')->nullable();
+            $table->integer('position');
+            $table->unsignedBigInteger('column_id');
             $table->timestamps();
+
+            /**
+             * foreign keys
+             */
+            $table->foreign('column_id')->references('id')->on('columns')->restrictOnDelete();
         });
     }
 
