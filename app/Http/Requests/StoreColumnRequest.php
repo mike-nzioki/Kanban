@@ -11,7 +11,7 @@ class StoreColumnRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class StoreColumnRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => ['required', 'min:2'],
         ];
+    }
+
+    public function prepareForValidation()
+    {
+        return $this->merge([
+            'board_id' => $this->board?->id,
+        ]);
     }
 }
