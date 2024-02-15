@@ -34,29 +34,29 @@ git clone https://github.com/yourusername/kanban-board.git
 ```
 cd kanban-board
 ```
-3. # Install PHP dependencies:
+3. **Install PHP dependencies:**
 
 ```
 composer install
 ```
-4. # Install NPM packages:
+4. **Install NPM packages:**
 
 ```
 npm install
 ```
-5. # Copy the example environment file and make the necessary changes in the .env file:
+5. **Copy the example environment file and make the necessary changes in the .env file:**
 ```
 cp .env.example .env
 ```
-6. # Generate an app encryption key:
+6. **Generate an app encryption key:**
 ```
 php artisan key:generate
 ```
-7. # Run the database migrations. Ensure your database connection is configured in .env before migrating:
+7. **Run the database migrations. Ensure your database connection is configured in .env before migrating:**
 ```
 php artisan migrate
 ```
-8. # Start the Laravel development server:
+8. **Start the Laravel development server:**
 ```
 php artisan serve
 
