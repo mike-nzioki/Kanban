@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
             $table->string('content')->nullable();
-            $table->integer('position');
+            $table->integer('position')->nullable();
             $table->unsignedBigInteger('column_id');
             $table->timestamps();
 
