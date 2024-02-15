@@ -15,18 +15,21 @@ class CardsReorderUpdateController extends Controller
     public function __invoke(CardsReorderUpdateRequest $request): RedirectResponse
     {
         $data = collect($request->columns)
-            ->recursive() // make all nested arrays a collection
-            ->map(function ($column) {
-                return $column['cards']->map(function ($card) use ($column) {
-                    return ['id' => $card['id'], 'position' => $card['position'], 'column_id' => $column['id']];
-                });
-            })
-            ->flatten(1)
-            ->toArray();
+        ->map(function ($column) {
+            // Ensure 'cards' is a collection
+            $cards = collect($column['cards']);
+
+            return $cards->map(function ($card) use ($column) {
+                return ['id' => $card['id'], 'position' => $card['position'], 'column_id' => $column['id']];
+            });
+        })
+        ->flatten(1)
+        ->toArray();
 
         // Batch
         Card::query()->upsert($data, ['id'], ['position', 'column_id']);
 
         return back();
+
     }
 }
