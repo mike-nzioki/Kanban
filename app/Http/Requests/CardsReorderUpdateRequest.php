@@ -11,7 +11,7 @@ class CardsReorderUpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class CardsReorderUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'columns' => ['nullable', 'array'],
+            'columns.*.id' => ['integer', 'required', 'exists:\App\Models\Column,id'],
+            'columns.*.cards' => ['nullable', 'array'],
+            'columns.*.cards.*.id' => ['nullable', 'integer', 'required_with:columns.*.cards', 'exists:\App\Models\Card,id'],
+            'columns.*.cards.*.position' => ['nullable', 'required_with:columns.*.cards', 'numeric'],
         ];
     }
 }
