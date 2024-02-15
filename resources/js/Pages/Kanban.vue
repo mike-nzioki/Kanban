@@ -35,7 +35,7 @@ const onReorderCommit = () => {
   </Head>
 
   <AuthenticatedLayout>
-    <template #header>
+    <template  #header>
       <h2 class="font-black text-2xl text-gray-800 leading-tight">
         {{ boardTitle }}
       </h2>

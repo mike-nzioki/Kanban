@@ -14,7 +14,7 @@ This project is a Kanban board built with Laravel, Inertia.js, and Vue.js. It's 
 
 Before installing the Kanban board, ensure you have the following:
 
-- PHP >= 7.4
+- PHP >= 8.0
 - Composer installed
 - Node.js and npm installed
 - A supported database (MySQL, PostgreSQL, SQLite, etc.)
@@ -32,7 +32,7 @@ git clone https://github.com/yourusername/kanban-board.git
 2. **Navigate to the project directory:**
 
 ```
-cd kanban-board
+cd kanban
 ```
 3. **Install PHP dependencies:**
 
