@@ -55,6 +55,7 @@ php artisan key:generate
 7. **Run the database migrations. Ensure your database connection is configured in .env before migrating:**
 ```
 php artisan migrate
+php artisan db:seed
 ```
 8. **Start the Laravel development server:**
 ```
