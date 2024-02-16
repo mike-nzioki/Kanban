@@ -27,7 +27,7 @@ Follow these steps to get your Kanban board up and running:
 1. **Clone the repository:**
 
 ```
-git clone https://github.com/yourusername/kanban-board.git
+git clone git@github.com:mike-nzioki/Kanban.git
 ```
 2. **Navigate to the project directory:**
 
