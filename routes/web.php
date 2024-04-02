@@ -39,7 +39,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/boards/{board?}', [BoardController::class, 'show'])->name('boards');
 
-    Route::post('/boards/{board}/   ', BoardColumnCreateController::class)
+    Route::post('/boards/{board}', BoardColumnCreateController::class)
         ->name('boards.columns.store');
 
     Route::delete('/columns/{column}', ColumnDestroyController::class)
