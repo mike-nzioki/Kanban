@@ -16,7 +16,7 @@ const closeModal = confirm => {
   isOpen.value = false;
   if (confirm) {
     router.delete(
-      route('columns.cards.destroy', {
+      route('columns.cards.desteroy', {
         card: props?.card?.id,
         column: props?.card?.column,
       })

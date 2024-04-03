@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('position')->nullable();
             $table->unsignedBigInteger('column_id');
             $table->timestamps();
+            $table->softDeletes();
 
             /**
              * foreign keys
